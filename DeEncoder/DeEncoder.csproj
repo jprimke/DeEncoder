@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{132D8B16-7D5D-44D9-B775-63192C3463F0}</ProjectGuid>
+    <ProjectGuid>{CB04095A-D078-4272-BC43-E60EC957F3BB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DeEncoder</RootNamespace>
@@ -34,14 +34,24 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>magic-wand.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Mvvm.v17.2, Version=17.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Mvvm.17.2.6\lib\net40\DevExpress.Mvvm.v17.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Controls.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Core.v17.2" />
     <Reference Include="DevExpress.Data.v17.2" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v17.2" />
     <Reference Include="DevExpress.Printing.v17.2.Core" />
-    <Reference Include="DevExpress.Mvvm.v17.2" />
+    <Reference Include="DevExpress.Images.v17.2" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016Colorful.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Themes.Office2016White.v17.2" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -59,6 +69,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\Codecs.cs" />
+    <Compile Include="ViewModels\EncodeDecoderHashAlgorithmFactory.cs" />
+    <Compile Include="ViewModels\EncoderDecoder.cs" />
+    <Compile Include="ViewModels\IEncodeDecoder.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -90,12 +105,37 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="App.config" />
+    <Resource Include="Images\DeEncoder.axicp" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\close-window%4016px.png" />
+    <Resource Include="Images\close-window%4032px.png" />
+    <Resource Include="Images\magic-wand%4016px.png" />
+    <Resource Include="Images\magic-wand%4032px.png" />
+    <Resource Include="Images\padlock-edit%4016px.png" />
+    <Resource Include="Images\padlock-edit%4032px.png" />
+    <Resource Include="Images\padlock-open-edit%4016px.png" />
+    <Resource Include="Images\padlock-open-edit%4032px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\button-update%4016px.png" />
+    <Resource Include="Images\button-update%4032px.png" />
+    <Resource Include="Images\exit%4016px.png" />
+    <Resource Include="Images\exit%4032px.png" />
+    <Resource Include="Images\gears%4016px.png" />
+    <Resource Include="Images\gears%4032px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="magic-wand.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

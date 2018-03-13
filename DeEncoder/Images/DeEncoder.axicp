@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AxialisIconCollection>
+  <Name>DeEncoder</Name>
+  <Icon>
+    <Name>gears</Name>
+    <StockIconName>gears.axvi</StockIconName>
+    <StockIconFamily>Axialis Flat Pro 2017</StockIconFamily>
+    <StockIconSet>Basic</StockIconSet>
+    <StockOverlayName></StockOverlayName>
+    <StockOverlayPos>4</StockOverlayPos>
+    <ResourceIDValue>107</ResourceIDValue>
+    <ResourceID>ID_GEARS</ResourceID>
+  </Icon>
+  <Icon>
+    <Name>exit</Name>
+    <StockIconName>exit.axvi</StockIconName>
+    <StockIconFamily>Axialis Flat Pro 2017</StockIconFamily>
+    <StockIconSet>Basic</StockIconSet>
+    <StockOverlayName></StockOverlayName>
+    <StockOverlayPos>4</StockOverlayPos>
+    <ResourceIDValue>106</ResourceIDValue>
+    <ResourceID>ID_EXIT</ResourceID>
+  </Icon>
+  <Icon>
+    <Name>button-update</Name>
+    <StockIconName>button-update.axvi</StockIconName>
+    <StockIconFamily>Axialis Flat Pro 2017</StockIconFamily>
+    <StockIconSet>Basic</StockIconSet>
+    <StockOverlayName></StockOverlayName>
+    <StockOverlayPos>4</StockOverlayPos>
+    <ResourceIDValue>104</ResourceIDValue>
+    <ResourceID>ID_BUTTON-UPDATE</ResourceID>
+  </Icon>
+  <Icon>
+    <Name>close-window</Name>
+    <StockIconName>close-window.axvi</StockIconName>
+    <StockIconFamily>Axialis Flat Pro 2017</StockIconFamily>
+    <StockIconSet>Basic</StockIconSet>
+    <StockOverlayName></StockOverlayName>
+    <StockOverlayPos>4</StockOverlayPos>
+    <ResourceIDValue>100</ResourceIDValue>
+    <ResourceID>ID_CLOSE-WINDOW</ResourceID>
+  </Icon>
+  <Icon>
+    <Name>padlock-open-edit</Name>
+    <StockIconName>padlock-open.axvi</StockIconName>
+    <StockIconFamily>Axialis Flat Pro 2017</StockIconFamily>
+    <StockIconSet>Basic</StockIconSet>
+    <StockOverlayName>edit.axvi</StockOverlayName>
+    <StockOverlayPos>4</StockOverlayPos>
+    <ResourceIDValue>101</ResourceIDValue>
+    <ResourceID>ID_PADLOCK-OPEN-EDIT</ResourceID>
+  </Icon>
+  <Icon>
+    <Name>padlock-edit</Name>
+    <StockIconName>padlock.axvi</StockIconName>
+    <StockIconFamily>Axialis Flat Pro 2017</StockIconFamily>
+    <StockIconSet>Basic</StockIconSet>
+    <StockOverlayName>edit.axvi</StockOverlayName>
+    <StockOverlayPos>4</StockOverlayPos>
+    <ResourceIDValue>102</ResourceIDValue>
+    <ResourceID>ID_PADLOCK-EDIT</ResourceID>
+  </Icon>
+  <Icon>
+    <Name>magic-wand</Name>
+    <StockIconName>magic-wand.axvi</StockIconName>
+    <StockIconFamily>Axialis Flat Pro 2017</StockIconFamily>
+    <StockIconSet>Basic</StockIconSet>
+    <StockOverlayName></StockOverlayName>
+    <StockOverlayPos>4</StockOverlayPos>
+    <ResourceIDValue>103</ResourceIDValue>
+    <ResourceID>ID_MAGIC-WAND</ResourceID>
+  </Icon>
+</AxialisIconCollection>
