@@ -54,7 +54,7 @@
             </dxr:RibbonDefaultPageCategory>
         </dxr:RibbonControl>
         <TextBox Grid.Row="1" Text="{Binding InputText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
-        <TextBox Grid.Row="2" Text="{Binding OutputText, Mode=OneWay}" Margin="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+        <TextBox Grid.Row="2" Text="{Binding OutputText, Mode=OneWay}" Margin="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
         <dxr:RibbonStatusBarControl Grid.Row="3" >
             <dxr:RibbonStatusBarControl.LeftItems>
                 <dxb:BarStaticItem Content="Selected codec:" />
