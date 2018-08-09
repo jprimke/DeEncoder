@@ -38,14 +38,18 @@
     <ApplicationIcon>magic-wand.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Xpf.Controls.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Xpf.Core.v18.1" />
-    <Reference Include="DevExpress.Data.v18.1" />
-    <Reference Include="DevExpress.Xpf.Ribbon.v18.1" />
-    <Reference Include="DevExpress.Printing.v18.1.Core" />
-    <Reference Include="DevExpress.Images.v18.1" />
-    <Reference Include="DevExpress.Xpf.Themes.Office2016Colorful.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Xpf.Themes.Office2016White.v18.1" />
+    <Reference Include="DevExpress.Mvvm.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Mvvm.17.2.7\lib\net40\DevExpress.Mvvm.v17.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Controls.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v17.2" />
+    <Reference Include="DevExpress.Data.v17.2" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v17.2" />
+    <Reference Include="DevExpress.Printing.v17.2.Core" />
+    <Reference Include="DevExpress.Images.v17.2" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016Colorful.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016White.v17.2" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -103,6 +107,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Resource Include="Images\DeEncoder.axicp" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -132,11 +137,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="magic-wand.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="DevExpress.Mvvm">
-      <Version>18.1.4</Version>
-    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
