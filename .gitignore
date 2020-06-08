@@ -262,3 +262,5 @@ __pycache__/
 /Icons
 DeEncoder/Images/*.png
 *.bak
+
+.ionide
