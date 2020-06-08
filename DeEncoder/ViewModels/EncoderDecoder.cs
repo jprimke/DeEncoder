@@ -28,7 +28,7 @@ namespace DeEncoder.ViewModels
                 case Codecs.SHA384:
                 case Codecs.SHA512:
                 case Codecs.MD5:
-                case Codecs.RIPEMD160:
+                    // case Codecs.RIPEMD160:
                     var algorithm = EncodeDecoderHashAlgorithmFactory.Create(codec);
                     var hash = algorithm.ComputeHash(bytes);
                     result = hash.Aggregate("", (current, b) => current + b.ToString("x2"));

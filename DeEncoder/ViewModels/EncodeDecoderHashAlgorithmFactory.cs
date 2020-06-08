@@ -11,23 +11,23 @@ namespace DeEncoder.ViewModels
             switch (codec)
             {
                 case Codecs.SHA1:
-                    result = new SHA1Managed();
+                    result = SHA1.Create();
                     break;
                 case Codecs.SHA256:
-                    result = new SHA256Managed();
+                    result = SHA256.Create();
                     break;
                 case Codecs.SHA384:
-                    result = new SHA384Managed();
+                    result = SHA384.Create();
                     break;
                 case Codecs.SHA512:
-                    result = new SHA512Managed();
+                    result = SHA512.Create();
                     break;
                 case Codecs.MD5:
-                    result = new MD5Cng();
+                    result = MD5.Create();
                     break;
-                case Codecs.RIPEMD160:
-                    result = new RIPEMD160Managed();
-                    break;
+                    // case Codecs.RIPEMD160:
+                    //     result = new RIPEMD160Managed();
+                    //     break;
             }
 
             return result;
