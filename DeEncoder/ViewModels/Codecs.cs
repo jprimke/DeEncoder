@@ -1,13 +1,13 @@
-﻿namespace DeEncoder.ViewModels
+﻿namespace DeEncoder.ViewModels;
+
+public enum Codecs
 {
-    public enum Codecs
-    {
-        Base64,
-        SHA1,
-        SHA256,
-        SHA384,
-        SHA512,
-        MD5,
-        //        RIPEMD160
-    }
+    Base64,
+    SHA1,
+    SHA256,
+    SHA384,
+    SHA512,
+    MD5,
+
+    // RIPEMD160
 }

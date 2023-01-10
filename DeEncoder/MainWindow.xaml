@@ -1,5 +1,7 @@
 ﻿<dx:ThemedWindow x:Class="DeEncoder.MainWindow"
                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
                  xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
@@ -8,58 +10,64 @@
                  xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
                  xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
                  xmlns:viewModels="clr-namespace:DeEncoder.ViewModels"
-                 Title="DeEncoder" Height="450" Width="725" DataContext="{dxmvvm:ViewModelSource viewModels:MainWindowViewModel}" x:Name="MainWnd" Icon="Images/magic-wand@16px.png" >
-    <dx:ThemedWindow.Resources>
-        <dx:BoolInverseConverter x:Key="BooleanInverse" />
-    </dx:ThemedWindow.Resources>
+                 Title="DeEncoder" Height="450" Width="725" x:Name="MainWnd" Icon="/Images/magic-wand@32px.png" 
+                 mc:Ignorable="d" d:DataContext="{d:DesignInstance viewModels:MainWindowViewModel}" >
+  <dx:ThemedWindow.Resources>
+    <dx:BoolInverseConverter x:Key="BooleanInverse" />
+  </dx:ThemedWindow.Resources>
 
-    <dxmvvm:Interaction.Behaviors>
-        <dxmvvm:OpenFileDialogService />
-        <dxwui:WinUIMessageBoxService />
-        <dxmvvm:SaveFileDialogService />
-    </dxmvvm:Interaction.Behaviors>
+  <dxmvvm:Interaction.Behaviors>
+    <dxmvvm:OpenFileDialogService />
+    <dxwui:WinUIMessageBoxService />
+    <dxmvvm:SaveFileDialogService />
+  </dxmvvm:Interaction.Behaviors>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <dxr:RibbonControl Grid.Row="0" RibbonStyle="Office2010">
-            <dxr:RibbonControl.ToolbarItems>
-            </dxr:RibbonControl.ToolbarItems>
-            <dxr:RibbonDefaultPageCategory>
-                <dxr:RibbonPage Caption="Home">
-                    <dxr:RibbonPageGroup Caption="Direction">
-                        <dxb:BarButtonItem Content="Encode" Command="{Binding EncodeCommand}"
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <dxr:RibbonControl Grid.Row="0" RibbonStyle="Office2019" AllowSimplifiedRibbon="True" ToolbarShowMode="Hide" ShowApplicationButton="False">
+      <dxr:RibbonControl.ToolbarItems>
+      </dxr:RibbonControl.ToolbarItems>
+      <dxr:RibbonDefaultPageCategory>
+        <dxr:RibbonPage Caption="Home">
+          <dxr:RibbonPageGroup Caption="Direction">
+            <dxb:BarButtonItem Content="Encode" Command="{Binding EncodeCommand}"
                                           Glyph="/DeEncoder;component/Images/padlock-edit@16px.png"
                                           LargeGlyph="/DeEncoder;component/Images/padlock-edit@32px.png" />
-                        <dxb:BarButtonItem Content="Decocde" Command="{Binding DecodeCommand}"
+            <dxb:BarButtonItem x:Name="DecodeButton" Content="Decocde" Command="{Binding DecodeCommand}"
                                           Glyph="/DeEncoder;component/Images/padlock-open-edit@16px.png"
                                           LargeGlyph="/DeEncoder;component/Images/padlock-open-edit@32px.png" />
-                    </dxr:RibbonPageGroup>
-                    <dxr:RibbonPageGroup Caption="Type">
-                        <dxb:BarEditItem Content="Codec" Glyph="/DeEncoder;component/Images/gears@16px.png" EditValue="{Binding SelectedCodec}">
-                            <dxb:BarEditItem.EditSettings>
-                                <dxe:ComboBoxEditSettings ItemsSource="{Binding CodecItems}"/>
-                            </dxb:BarEditItem.EditSettings>
-                        </dxb:BarEditItem>
-                    </dxr:RibbonPageGroup>
-                    <dxr:RibbonPageGroup Caption="Window">
-                        <dxb:BarButtonItem Content="Close" Glyph="/DeEncoder;component/Images/exit@16px.png" LargeGlyph="/DeEncoder;component/Images/exit@32px.png" Command="{Binding CloseCommand}" CommandParameter="{Binding ElementName=MainWnd}">
-                        </dxb:BarButtonItem>
-                    </dxr:RibbonPageGroup>
-                </dxr:RibbonPage>
-            </dxr:RibbonDefaultPageCategory>
-        </dxr:RibbonControl>
-        <TextBox Grid.Row="1" Text="{Binding InputText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
-        <TextBox Grid.Row="2" Text="{Binding OutputText, Mode=OneWay}" Margin="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
-        <dxr:RibbonStatusBarControl Grid.Row="3" >
-            <dxr:RibbonStatusBarControl.LeftItems>
-                <dxb:BarStaticItem Content="Selected codec:" />
-                <dxb:BarStaticItem Content="{Binding SelectedCodec}" />
-            </dxr:RibbonStatusBarControl.LeftItems>
-            </dxr:RibbonStatusBarControl>
-    </Grid>
+          </dxr:RibbonPageGroup>
+          <dxr:RibbonPageGroup Caption="Type">
+            <dxb:BarEditItem Content="Codec" Glyph="/DeEncoder;component/Images/gears@16px.png" EditValue="{Binding SelectedCodec}">
+              <dxb:BarEditItem.EditSettings>
+                <dxe:ComboBoxEditSettings ItemsSource="{Binding CodecItems}"/>
+              </dxb:BarEditItem.EditSettings>
+            </dxb:BarEditItem>
+            <dxb:BarEditItem Content="Salt" EditValue="{Binding Salt}" EditWidth="100" Description="Salt for Hash" Glyph="{dx:DXImage SvgImages/XAF/Action_HideItemFromDashboard.svg}" IsEnabled="{Binding ElementName=DecodeButton, Path=IsEnabled, Converter={StaticResource BooleanInverse}}">
+              <dxb:BarEditItem.EditSettings>
+                <dxe:TextSettings ></dxe:TextSettings>
+              </dxb:BarEditItem.EditSettings>
+            </dxb:BarEditItem>
+          </dxr:RibbonPageGroup>
+          <dxr:RibbonPageGroup Caption="Window">
+            <dxb:BarButtonItem Content="Close" Glyph="/DeEncoder;component/Images/exit@16px.png" LargeGlyph="/DeEncoder;component/Images/exit@32px.png" Command="{Binding CloseCommand}" CommandParameter="{Binding ElementName=MainWnd}">
+            </dxb:BarButtonItem>
+          </dxr:RibbonPageGroup>
+        </dxr:RibbonPage>
+      </dxr:RibbonDefaultPageCategory>
+    </dxr:RibbonControl>
+    <TextBox Grid.Row="1" Text="{Binding InputText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+    <TextBox Grid.Row="2" Text="{Binding OutputText, Mode=OneWay}" Margin="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
+    <dxr:RibbonStatusBarControl Grid.Row="3" >
+      <dxr:RibbonStatusBarControl.LeftItems>
+        <dxb:BarStaticItem Content="Selected codec:" />
+        <dxb:BarStaticItem Content="{Binding SelectedCodec}" />
+      </dxr:RibbonStatusBarControl.LeftItems>
+    </dxr:RibbonStatusBarControl>
+  </Grid>
 </dx:ThemedWindow>

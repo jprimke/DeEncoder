@@ -1,13 +1,102 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TargetFramework>net7.0-windows</TargetFramework>
         <UseWPF>true</UseWPF>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="DevExpress.WindowsDesktop.Wpf" Version="20.1.4" />
-        <PackageReference Include="DevExpress.WindowsDesktop.Wpf.Themes.All" Version="20.1.4" />
+      <None Remove="Images\button-update%4016px.png" />
+      <None Remove="Images\button-update%4032px.png" />
+      <None Remove="Images\close-window%4016px.png" />
+      <None Remove="Images\close-window%4032px.png" />
+      <None Remove="Images\DeEncoder.axicp" />
+      <None Remove="Images\exit%4016px.png" />
+      <None Remove="Images\exit%4032px.png" />
+      <None Remove="Images\gears%4016px.png" />
+      <None Remove="Images\gears%4032px.png" />
+      <None Remove="Images\magic-wand%4016px.png" />
+      <None Remove="Images\magic-wand%4032px.png" />
+      <None Remove="Images\padlock-edit%4016px.png" />
+      <None Remove="Images\padlock-edit%4032px.png" />
+      <None Remove="Images\padlock-open-edit%4016px.png" />
+      <None Remove="Images\padlock-open-edit%4032px.png" />
+      <None Remove="Images\Thumbs.db" />
+      <None Remove="magic-wand%4016px.png" />
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="appsettings.Developer.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="Images\button-update@16px.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Images\button-update@32px.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Images\close-window@16px.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Images\close-window@32px.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Images\DeEncoder.axicp">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Images\exit@16px.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Images\exit@32px.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Images\gears@16px.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Images\gears@32px.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Images\magic-wand@16px.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Images\magic-wand@32px.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Images\padlock-edit@16px.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Images\padlock-edit@32px.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Images\padlock-open-edit@16px.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Images\padlock-open-edit@32px.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="magic-wand@16px.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="DevExpress.Wpf" Version="22.2.3" />
+      <PackageReference Include="DevExpress.Wpf.Themes.All" Version="22.2.3" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
+      <PackageReference Include="Serilog" Version="2.12.0" />
+      <PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
+      <PackageReference Include="Serilog.Enrichers.Process" Version="2.0.2" />
+      <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+      <PackageReference Include="Serilog.Extensions.Hosting" Version="5.0.1" />
+      <PackageReference Include="Serilog.Settings.Configuration" Version="3.4.0" />
+      <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+      <PackageReference Include="Serilog.Sinks.Seq" Version="5.2.2" />
+      <PackageReference Include="SerilogAnalyzer" Version="0.15.0" />
     </ItemGroup>
 </Project>
