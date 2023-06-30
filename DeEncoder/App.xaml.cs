@@ -49,7 +49,7 @@ public partial class App : Application
     {
         DispatcherUnhandledException += (sender, args) =>
                                         {
-                                            ILogger logger = host?.Services.GetService<ILogger>();
+                                            var logger = host?.Services.GetService<ILogger>();
                                             logger?.Error(args.Exception, "Unhanled exception in WorkMeasure");
 
                                             MessageBox.Show(
@@ -69,7 +69,7 @@ public partial class App : Application
             ApplicationThemeHelper.ApplicationThemeName = Configuration.GetValue<string>("ApplicationThemeName");
             await host.StartAsync().ConfigureAwait(false);
 
-            MainWindow mainWindow = host.Services.GetRequiredService<MainWindow>();
+            var mainWindow = host.Services.GetRequiredService<MainWindow>();
             mainWindow.Show();
 
             base.OnStartup(e);

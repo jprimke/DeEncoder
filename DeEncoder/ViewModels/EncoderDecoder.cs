@@ -29,7 +29,7 @@ public class EncoderDecoder : IEncodeDecoder
             case Codecs.SHA384:
             case Codecs.SHA512:
             case Codecs.MD5:
-                HashAlgorithm algorithm = EncodeDecoderHashAlgorithmFactory.Create(codec);
+                var algorithm = EncodeDecoderHashAlgorithmFactory.Create(codec);
                 var hash = algorithm.ComputeHash(bytes);
                 result = hash.Aggregate("", (current, b) => current + b.ToString("x2"));
                 break;
